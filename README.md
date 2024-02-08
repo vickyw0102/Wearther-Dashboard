@@ -1,1 +1,1 @@
-# Wearther-Dashboard
+# Weather-Dashboard
