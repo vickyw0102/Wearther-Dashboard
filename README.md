@@ -43,7 +43,7 @@ To ensure a dynamic and responsive user experience for checking weather:
 https://vickyw0102.github.io/Weather-Dashboard/ 
 
 Here's a look at the web application:
-![alt text](image-1.png)
+![alt text](image.png)
 
 
 ## Credits
