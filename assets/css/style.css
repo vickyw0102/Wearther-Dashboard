@@ -1,3 +1,50 @@
 body {
     font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
 }
+header{
+    background-color: #0da49c;
+    color: rgb(230, 12, 12);
+    padding: 20px;
+    margin-bottom: 20px;
+
+}
+h1 {
+    font-size: 100px;
+    color:blue;
+    display: flex;
+    justify-content: center;
+}
+
+.search-button {
+    width: 100%;
+    background-color: #0fbbfa !important;
+  }
+  
+  .search-history{
+    background-color: rgb(171, 168, 168) !important;
+  }
+  
+  .custom-card {
+    background-color: rgb(61, 61, 64) !important;
+    color: #ffffff;
+  }
+  
+  .forecast-card {
+    margin: 10px !important;
+    padding: 2px !important;
+    width: 100%;
+  }
+  
+  #search-btn {
+    width: 100%;
+    background-color: #0fbbfa !important;
+    color: #ffffff;
+  }
+  #city-input {
+    width: 100%;
+    padding: 5px;
+    color: #ffffff;
+  }
+  .forecastText {
+    font-weight: 700;
+  }
