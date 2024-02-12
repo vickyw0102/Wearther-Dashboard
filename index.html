@@ -24,34 +24,51 @@
 </head>
 
 <body>
-  <header>
+  <header class="container-fluid col-lg-12 text-center text-white  p-2 weather-header">
     <h1>Weather Dashboard</h1>
   </header>
 
-<main>
-  <div class="container-fluid">
+
+  <div class="container-fluid col-lg-10">
     <div class="row">
       <div class="col-3 col-md-3">
         <h2>Search for a City</h2>
-        <form id="search-form">
-          <input type="text" id="city-input" placeholder="Enter city name">
-          <button id="search-btn" type="submit" class=btnbtn-secondary-outline value="Search">
-          </botton>
-          <hr class="hr weather-hr" />
+        <form id="search-form" class="form">
+          <div class="form-inline form-group">
+            <div class="input-group">
+              <input 
+              type="text" 
+              id="city-input" 
+              placeholder="Enter city name" 
+              aria-labelledby="form-heading" 
+              aria-controls="today forcast"/>
+            </div>
+            <br>
+            <div class="input-group-append">
+              <button 
+              id="search-btn" 
+              type="submit" 
+              class="btn btn-outline-dark" 
+              value="Search"
+              aria-label="submit search">
+              Search
+              </button>
+          
+              <hr class="hr weather-hr" />
+            
+            </div>
+          </div>
         </form>
-        <ul id="search-history"></ul>
+      
+        <div class="list-group" id="history"></div>
       </div>
+      
 
-
-
-
-
-      <div class="col-9 col-md-3">
+      <div class="col-9 col-md-9">
         <section id="current-weather" class="current-weather mt-3" role="region" aria-live="polite"></section>
 
         <section id="five-day-forecast" class="five-day-forecast row mt-3"role="region" aria-live="polite"></section>
-        
-      </div>
+      </div>    
     </div>
   </div>
 

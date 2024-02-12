@@ -1,9 +1,9 @@
 let apiURL = "https://api.openweathermap.org/data/2.5/forecast?q=";
-let apiKey = "3045506b3e2273db68dc647f53a23d17";
+let apiKey = "c6e3c2ed3702ad6fac505841e1ac01d0";
 let queryURL;
 let searchBtn = $("#search-btn");
-let currentWeather=$(".current-weather");
-let weatherForecast=$(".five-day-forecast");
+let currentWeather=$("#current-weather");
+let weatherForecast=$("#five-day-forecast");
 let cityName;
 let cityBtn;
 
@@ -23,11 +23,13 @@ function getUserInput(){
        
     }
     const isDuplicate = citiesArray.includes(cityName);
-    fetchWeather(cityName);
+    
+    fetchData();
     $("#city-input").val("");
+    
     if (!isDuplicate) {
         citiesArray.push(cityName);
-        localStorage.setItem("cities", JSON.stringify(citiesArray));
+        // localStorage.setItem("cities", JSON.stringify(citiesArray));
         renderInput();
 
     }
@@ -81,16 +83,16 @@ return roundedWindSpeed;
 // Function to fetch weather data from OpenWeatherMap API
 function fetchData() {
 // Clear today weather section
-let todaySection = $("#today");
+let todaySection = $("#current-weather");
 todaySection.empty();
 /// Clear forecast weather section
-let forecastSection = $("#forecast");
+let forecastSection = $("#five-day-forecast");
 forecastSection.empty();
 
 //  Build the API query URL based on the user input value
 queryURL = apiURL + cityName + "&appid=" + apiKey;
-// Fetch data from the API
-fetch(queryURL)
+//Fetch data from the API
+fetch(queryURL) 
     .then((response) => response.json())
     .then(function (data) {
     console.log(data);
@@ -130,8 +132,10 @@ fetch(queryURL)
     todayCard.append(todayTitle);
     todayCard.append(p1, p2, p3);
     todayCardContainer.append(todayCard);
+    
     todayMain.append(todayCardContainer);
-    todayWeather.append(todayMain);
+    
+    currentWeather.append(todayMain);
 
     // Group forecast data by day
     const dailyForecast = {};
@@ -218,7 +222,8 @@ fetch(queryURL)
     }
     })
 
-    .catch(function (error) {
-    console.error("Error:", error);
-    });
+    // .catch(function (error) {
+    // console.error("Error:", error);
+    // });
+    
 }
